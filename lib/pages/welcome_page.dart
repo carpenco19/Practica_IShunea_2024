@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:travel_app_flutter/cubit/app_cubit.dart';
-import 'package:travel_app_flutter/misc/colors.dart';
-import 'package:travel_app_flutter/widgets/app_large_text.dart';
-import 'package:travel_app_flutter/widgets/app_text.dart';
-import 'package:travel_app_flutter/widgets/responsive_button.dart';
+/*import 'package:flutter_project/cubit/app_cubit.dart';*/
+import 'package:flutter_project/mics/colors.dart';
+import 'package:flutter_project/widgets/app_large_text.dart';
+import 'package:flutter_project/widgets/app_text.dart';
+import 'package:flutter_project/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({Key? key}) : super(key: key);
+  const WelcomePage({super.key});
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -34,30 +34,31 @@ class _WelcomePageState extends State<WelcomePage> {
               decoration: BoxDecoration(
                 // decoration sets the background
                 image: DecorationImage(
+                    // ignore: prefer_interpolation_to_compose_strings
                     image: AssetImage("img/" + images[index]),
                     fit: BoxFit.cover),
               ),
               child: Container(
                 margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: index == 1
-                    ? Text("Seond")
+                    ? const Text("Seond")
                     : Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              AppLargeText(
+                              const AppLargeText(
                                 text: "Trips",
                               ),
-                              AppText(
+                              const AppText(
                                 text: "Mountain",
                                 size: 30,
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 20,
                               ),
-                              Container(
+                              const SizedBox(
                                 width: 250,
                                 child: AppText(
                                   color: AppColors.textColor1,
@@ -65,7 +66,7 @@ class _WelcomePageState extends State<WelcomePage> {
                                       "Mountain Hikes gives you an incredible sense of freedom along with endurance tests",
                                 ),
                               ),
-                              SizedBox(
+                              const SizedBox(
                                 height: 40,
                               ),
                               GestureDetector(
@@ -73,10 +74,8 @@ class _WelcomePageState extends State<WelcomePage> {
                                   BlocProvider.of<AppCubits>(context)
                                       .getData(); // we can run any method from the state usisng the block provider
                                 },
-                                child: Container(
-                                  child: ResponsiveButton(
-                                    width: 120,
-                                  ),
+                                child: ResponsiveButton(
+                                  width: 120,
                                 ),
                               )
                             ],
@@ -85,7 +84,7 @@ class _WelcomePageState extends State<WelcomePage> {
                             children: List.generate(
                                 3,
                                 (indexDots) => Container(
-                                      margin: EdgeInsets.only(bottom: 4),
+                                      margin: const EdgeInsets.only(bottom: 4),
                                       width: 8,
                                       height: index == indexDots ? 25 : 8,
                                       decoration: BoxDecoration(

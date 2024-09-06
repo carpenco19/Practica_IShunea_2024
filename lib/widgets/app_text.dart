@@ -1,16 +1,15 @@
-import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
 import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {
-  double size;
+  final double size;
   final String text;
   final Color color;
-  AppText(
-      {Key? key,
+
+  const AppText(
+      {super.key,
       this.size = 16,
       required this.text,
-      this.color = Colors.black54})
-      : super(key: key);
+      this.color = Colors.black54});
 
   @override
   Widget build(BuildContext context) {
