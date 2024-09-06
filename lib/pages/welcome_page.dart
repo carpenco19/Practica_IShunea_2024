@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-/*import 'package:flutter_project/cubit/app_cubit.dart';*/
+import 'package:flutter_project/cubit/app_cubits.dart';
 import 'package:flutter_project/mics/colors.dart';
 import 'package:flutter_project/widgets/app_large_text.dart';
 import 'package:flutter_project/widgets/app_text.dart';
@@ -71,8 +71,8 @@ class _WelcomePageState extends State<WelcomePage> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  BlocProvider.of<AppCubits>(context)
-                                      .getData(); // we can run any method from the state usisng the block provider
+                                  BlocProvider.of<AppCubits>(
+                                      context); // we can run any method from the state usisng the block provider
                                 },
                                 child: ResponsiveButton(
                                   width: 120,

@@ -1,6 +1,4 @@
-/*import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -15,15 +13,20 @@ class _HomePageState extends State<HomePage> {
     return const Scaffold(
       body: Column(
         children: [
-          Padding: const EdgeInsets.only(top:70, left:20),
-          Row(
-            children: [
-              Icon(Icons.menu, size: 30, color: Colors.black54,)
-            ],
-          )
-
+          Padding(
+            padding: EdgeInsets.only(top: 70, left: 20),
+            child: Row(
+              children: [
+                Icon(
+                  Icons.menu,
+                  size: 30,
+                  color: Colors.black54,
+                )
+              ],
+            ),
+          ),
         ],
       ),
     );
   }
-}*/
+}

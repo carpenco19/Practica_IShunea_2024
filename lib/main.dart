@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter_project/pages/welcome_page.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_project/cubit/app_cubit_logics.dart';
+import 'package:flutter_project/cubit/app_cubits.dart';
+import 'package:flutter_project/services/data_services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,7 +25,12 @@ class _MyAppState extends State<MyApp> {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const WelcomePage(),
+      home: BlocProvider<AppCubits>(
+        create: (context) => AppCubits(
+          DataServices(),
+        ),
+        child: const AppCubitLogics(),
+      ),
     );
   }
 }

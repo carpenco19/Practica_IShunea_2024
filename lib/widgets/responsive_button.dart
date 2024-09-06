@@ -1,23 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/mics/colors.dart';
+import 'package:flutter_project/widgets/app_text.dart';
 
 // ignore: must_be_immutable
 class ResponsiveButton extends StatelessWidget {
-  bool? isResponsive;
+  bool isResponsive;
   double? width;
-  ResponsiveButton({super.key, this.width, this.isResponsive = false});
+  String text;
+  ResponsiveButton({
+    super.key,
+    this.width = 120,
+    this.isResponsive = false,
+    this.text = "",
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: width,
-      height: 60,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10), color: AppColors.mainColor),
-      child: Row(
-        children: [
-          Image.asset("img/button-one.png"),
-        ],
+    return Flexible(
+      child: Container(
+        width: isResponsive ? double.maxFinite : width,
+        height: 60,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: AppColors.mainColor,
+        ),
+        child: Row(
+          mainAxisAlignment: isResponsive
+              ? MainAxisAlignment.spaceBetween
+              : MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              width: 5,
+            ),
+            AppText(
+              text: text,
+              color: Colors.white,
+            ),
+            Image.asset("img/button-one.png"),
+          ],
+        ),
       ),
     );
   }

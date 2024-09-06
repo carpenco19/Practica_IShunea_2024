@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-/*import 'package:flutter_project/pages/home_page.dart';*/
 import 'package:flutter_project/pages/navpages/bar_item_page.dart';
+import 'package:flutter_project/pages/home_page.dart';
 import 'package:flutter_project/pages/navpages/my_page.dart';
 import 'package:flutter_project/pages/navpages/search_page.dart';
 
