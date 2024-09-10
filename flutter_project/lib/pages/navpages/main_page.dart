@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/pages/navpages/bar_item_page.dart';
-import 'package:flutter_project/pages/home_page.dart';
-import 'package:flutter_project/pages/navpages/my_page.dart';
-import 'package:flutter_project/pages/navpages/search_page.dart';
+import 'package:travel_app_flutter/pages/home_page.dart';
+import 'package:travel_app_flutter/pages/navpages/bar_item_page.dart';
+import 'package:travel_app_flutter/pages/navpages/my_page.dart';
+import 'package:travel_app_flutter/pages/navpages/search_page.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_project/cubit/app_cubits.dart';
-import 'package:flutter_project/mics/colors.dart';
-import 'package:flutter_project/widgets/app_large_text.dart';
-import 'package:flutter_project/widgets/app_text.dart';
-import 'package:flutter_project/widgets/responsive_button.dart';
+import 'package:travel_app_flutter/cubit/app_cubit.dart';
+import 'package:travel_app_flutter/misc/colors.dart';
+import 'package:travel_app_flutter/widgets/app_large_text.dart';
+import 'package:travel_app_flutter/widgets/app_text.dart';
+import 'package:travel_app_flutter/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
-  const WelcomePage({super.key});
+  const WelcomePage({Key? key}) : super(key: key);
 
   @override
   State<WelcomePage> createState() => _WelcomePageState();
@@ -34,7 +34,6 @@ class _WelcomePageState extends State<WelcomePage> {
               decoration: BoxDecoration(
                 // decoration sets the background
                 image: DecorationImage(
-                    // ignore: prefer_interpolation_to_compose_strings
                     image: AssetImage("img/" + images[index]),
                     fit: BoxFit.cover),
               ),
@@ -48,17 +47,17 @@ class _WelcomePageState extends State<WelcomePage> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const AppLargeText(
+                              AppLargeText(
                                 text: "Trips",
                               ),
-                              const AppText(
+                              AppText(
                                 text: "Mountain",
                                 size: 30,
                               ),
                               const SizedBox(
                                 height: 20,
                               ),
-                              const SizedBox(
+                              SizedBox(
                                 width: 250,
                                 child: AppText(
                                   color: AppColors.textColor1,
@@ -71,11 +70,13 @@ class _WelcomePageState extends State<WelcomePage> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  BlocProvider.of<AppCubits>(
-                                      context); // we can run any method from the state usisng the block provider
+                                  BlocProvider.of<AppCubits>(context)
+                                      .getData(); // we can run any method from the state usisng the block provider
                                 },
-                                child: ResponsiveButton(
-                                  width: 120,
+                                child: Container(
+                                  child: ResponsiveButton(
+                                    width: 120,
+                                  ),
                                 ),
                               )
                             ],

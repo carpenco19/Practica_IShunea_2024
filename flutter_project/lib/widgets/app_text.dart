@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
 class AppText extends StatelessWidget {
-  final double size;
+  double size;
   final String text;
   final Color color;
-
-  const AppText(
-      {super.key,
+  AppText(
+      {Key? key,
       this.size = 16,
       required this.text,
-      this.color = Colors.black54});
+      this.color = Colors.black54})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

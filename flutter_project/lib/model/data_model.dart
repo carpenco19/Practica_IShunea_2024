@@ -17,9 +17,7 @@ class DataModel {
       required this.stars});
 
   factory DataModel.fromJson(Map<String, dynamic> json) {
-    // ignore: avoid_print
     print("json received");
-    // ignore: avoid_print
     print(json);
     return DataModel(
         img: json["img"],

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/widgets/app_text.dart';
+import 'package:travel_app_flutter/widgets/app_text.dart';
 
-// ignore: must_be_immutable
 class AppButtons extends StatelessWidget {
   final Color color;
   final Color backgroundColor;
@@ -11,7 +10,7 @@ class AppButtons extends StatelessWidget {
   IconData icon;
   final Color borderColor;
   AppButtons({
-    super.key,
+    Key? key,
     this.text = "-",
     this.icon = Icons.handyman,
     required this.color,
@@ -19,7 +18,7 @@ class AppButtons extends StatelessWidget {
     required this.size,
     required this.borderColor,
     this.isIcon = false,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

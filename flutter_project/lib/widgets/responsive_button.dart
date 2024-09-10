@@ -1,18 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/mics/colors.dart';
-import 'package:flutter_project/widgets/app_text.dart';
+import 'package:travel_app_flutter/misc/colors.dart';
+import 'package:travel_app_flutter/widgets/app_text.dart';
 
-// ignore: must_be_immutable
 class ResponsiveButton extends StatelessWidget {
   bool isResponsive;
   double? width;
   String text;
   ResponsiveButton({
-    super.key,
+    Key? key,
     this.width = 120,
     this.isResponsive = false,
     this.text = "",
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class ResponsiveButton extends StatelessWidget {
               text: text,
               color: Colors.white,
             ),
-            Image.asset("img/button-one.png"),
+            Image.asset("img/button-one.png")
           ],
         ),
       ),
