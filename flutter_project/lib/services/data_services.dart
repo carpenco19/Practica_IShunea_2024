@@ -5,7 +5,7 @@ import 'package:travel_app_flutter/model/data_model.dart';
 
 class DataServices {
   String baseUrl = "http://mark.bslmeiyu.com/api";
-  getInfo() async {
+  Future<List<DataModel>> getInfo() async {
     var apiUrl = '/getplaces';
     //creating a get request
     http.Response response = await http.get(Uri.parse(baseUrl + apiUrl));
@@ -13,15 +13,14 @@ class DataServices {
     try {
       if (response.statusCode == 200) {
         List<dynamic> list = json.decode(response.body);
-        print("At data sercies");
-        print(list.map((e) => DataModel.fromJson(e)).toList());
-        return list
-            .map((e) => DataModel.fromJson(e))
-            .toList(); // converting the JSON from the server to the JSON format that the flutter understands
+        // ignore: avoid_print
+        print("list");
+        return list.map((e) => DataModel.fromJson(e)).toList();
       } else {
         return <DataModel>[];
       }
     } catch (e) {
+      // ignore: avoid_print
       print(e);
       return <DataModel>[];
     }

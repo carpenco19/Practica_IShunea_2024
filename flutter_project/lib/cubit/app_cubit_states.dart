@@ -6,19 +6,19 @@ abstract class CubitStates extends Equatable {}
 class InitialState extends CubitStates {
   @override
 // TODO: implement props
-  List<Object> get props => [];
+  List<Object> props() => [];
 }
 
 class WelcomeState extends CubitStates {
   @override
   // TODO: implement props
-  List<Object> get props => []; // `props` gol, fără variabile de comparat
+  List<Object> props() => []; // `props` gol, fără variabile de comparat
 }
 
 class LoadingState extends CubitStates {
   @override
   // TODO: implement props
-  List<Object> get props => [];
+  List<Object> props() => [];
 }
 
 class LoadedState extends CubitStates {
@@ -27,7 +27,7 @@ class LoadedState extends CubitStates {
 
   @override
   // TODO: implement props
-  List<Object> get props => [places];
+  List<Object> props() => [places];
 }
 
 class DetailState extends CubitStates {
@@ -36,5 +36,5 @@ class DetailState extends CubitStates {
 
   @override
   // TODO: implement props
-  List<Object> get props => [place];
+  List<Object> props() => [place];
 }
