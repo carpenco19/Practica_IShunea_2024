@@ -18,13 +18,14 @@ class DetailPage extends StatefulWidget {
 
 class _DetailPageState extends State<DetailPage> {
   int gottenStarts = 4;
-  int selectedIndex = 1;
+  int selectedIndex = -1;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AppCubits, CubitStates>(builder: (context, state) {
       DetailState detailState = state as DetailState;
       return Scaffold(
-        body: SizedBox(
+        // ignore: sized_box_for_whitespace
+        body: Container(
           width: double.maxFinite,
           height: double.maxFinite,
           child: Stack(
@@ -93,7 +94,7 @@ class _DetailPageState extends State<DetailPage> {
                             color: AppColors.mainColor,
                           ),
                           const SizedBox(
-                            height: 5,
+                            width: 5,
                           ),
                           AppText(
                             text: detailState.place.location,
@@ -166,7 +167,7 @@ class _DetailPageState extends State<DetailPage> {
                             color: Colors.black.withOpacity(0.8)),
                         const SizedBox(height: 5),
                         AppText(
-                            text: detail.places.description,
+                            text: detailState.place.description,
                             color: AppColors.mainTextColor),
                       ],
                     ),
