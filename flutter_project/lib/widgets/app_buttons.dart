@@ -8,19 +8,17 @@ class AppButtons extends StatelessWidget {
   final double size;
   String text;
   bool isIcon;
-  IconData icon;
+  IconData? icon;
   final Color borderColor;
-
   AppButtons({
     super.key,
+    this.isIcon = false,
     this.text = "Hi",
-    this.icon = Icons.handyman,
-    /*this.icon,*/
+    this.icon,
     required this.color,
     required this.backgroundColor,
     required this.size,
     required this.borderColor,
-    this.isIcon = false,
   });
 
   @override
@@ -32,7 +30,9 @@ class AppButtons extends StatelessWidget {
           border: Border.all(color: borderColor, width: 1.0),
           borderRadius: BorderRadius.circular(15),
           color: backgroundColor),
-      child: isIcon==false?Center(child: AppText(text:text, color:color)):Center(child: Icon(icon, color: color)),
+      child: isIcon == false
+          ? Center(child: AppText(text: text, color: color))
+          : Center(child: Icon(icon, color: color)),
     );
   }
 }
