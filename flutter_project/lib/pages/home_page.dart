@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app_flutter/cubit/app_cubits.dart';
@@ -26,7 +25,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
     TabController tabController = TabController(
         length: 3,
         vsync:
-        this); // vsync is context and method needs to be in the build method to re-render
+            this); // vsync is context and method needs to be in the build method to re-render
 
     return Scaffold(
       body: BlocBuilder<AppCubits, CubitStates>(
@@ -107,15 +106,15 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (BuildContext context, int index) {
                             return GestureDetector(
-                              onTap: (){
-
-                                BlocProvider.of<AppCubits>(context).DetailPage(info[index]);
+                              onTap: () {
+                                BlocProvider.of<AppCubits>(context)
+                                    .DetailPage(info[index]);
                               },
                               child: Container(
                                 width: 200,
                                 height: 300,
-                                margin: const EdgeInsets.only(
-                                    right: 15, top: 10),
+                                margin:
+                                    const EdgeInsets.only(right: 15, top: 10),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.white,
@@ -127,8 +126,58 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                               ),
                             );
                           }),
-                      const Text("There"),
-                      const Text("Bye")
+                      /*const Text("There"),
+                      const Text("Bye")*/
+                      ListView.builder(
+                          itemCount: info.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                BlocProvider.of<AppCubits>(context)
+                                    .DetailPage(info[index]);
+                              },
+                              child: Container(
+                                width: 200,
+                                height: 300,
+                                margin:
+                                    const EdgeInsets.only(right: 15, top: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          "http://mark.bslmeiyu.com/uploads/${info[index].img}"),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                            );
+                          }),
+                      ListView.builder(
+                          itemCount: info.length,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (BuildContext context, int index) {
+                            return GestureDetector(
+                              onTap: () {
+                                BlocProvider.of<AppCubits>(context)
+                                    .DetailPage(info[index]);
+                              },
+                              child: Container(
+                                width: 200,
+                                height: 300,
+                                margin:
+                                    const EdgeInsets.only(right: 15, top: 10),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          "http://mark.bslmeiyu.com/uploads/${info[index].img}"),
+                                      fit: BoxFit.cover),
+                                ),
+                              ),
+                            );
+                          }),
                     ],
                   ),
                 ),
@@ -183,6 +232,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                             // ignore: duplicate_ignore
 
+                            // ignore: avoid_unnecessary_containers
                             Container(
                               child: AppText(
                                 text: images.values.elementAt(index),
@@ -211,7 +261,6 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
 class CircleTabBarIndicator extends Decoration {
   final Color color;
   double radius;
-
 
   CircleTabBarIndicator({required this.radius, required this.color});
   @override
