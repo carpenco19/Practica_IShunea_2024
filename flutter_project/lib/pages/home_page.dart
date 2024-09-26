@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:travel_app_flutter/cubit/app_cubits.dart';
@@ -232,6 +234,7 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                             ),
                             // ignore: duplicate_ignore
 
+                            // ignore: duplicate_ignore
                             // ignore: avoid_unnecessary_containers
                             Container(
                               child: AppText(
