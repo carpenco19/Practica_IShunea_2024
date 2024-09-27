@@ -5,7 +5,7 @@ import 'package:travel_app_flutter/pages/navpages/my_page.dart';
 import 'package:travel_app_flutter/pages/navpages/search_page.dart';
 
 class MainPage extends StatefulWidget {
-  const MainPage({super.key});
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   State<MainPage> createState() => _MainPageState();
@@ -31,11 +31,10 @@ class _MainPageState extends State<MainPage> {
       backgroundColor: Colors.white,
       body: pages[currentIndex],
       bottomNavigationBar: BottomNavigationBar(
-        selectedFontSize: 0,
-        unselectedFontSize: 0,
         type: BottomNavigationBarType.fixed,
         backgroundColor: Colors.white,
         onTap: onTap,
+        selectedFontSize: 0, unselectedFontSize: 0,
         currentIndex: currentIndex,
         selectedItemColor: Colors.black54,
         unselectedItemColor: Colors.grey.withOpacity(0.5),
@@ -62,7 +61,7 @@ class _MainPageState extends State<MainPage> {
             ),
           ),
           BottomNavigationBarItem(
-            label: "My",
+            label: "Me",
             icon: Icon(
               Icons.person,
             ),

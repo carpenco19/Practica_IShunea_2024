@@ -27,9 +27,7 @@ class AppButtons extends StatelessWidget {
       width: size,
       height: size,
       decoration: BoxDecoration(
-          border: Border.all(
-              color: borderColor,
-              width: 1.0),
+          border: Border.all(color: borderColor, width: 1.0),
           borderRadius: BorderRadius.circular(15),
           color: backgroundColor),
       child: isIcon==false?Center(child: AppText(text:text, color:color)):Center(child: Icon(icon, color: color)),

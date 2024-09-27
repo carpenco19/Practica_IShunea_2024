@@ -6,10 +6,8 @@ class AppLargeText extends StatelessWidget {
   final String text;
   final Color color;
   AppLargeText(
-      {super.key,
-      this.size = 30,
-      required this.text,
-      this.color = Colors.black});
+      {Key? key, this.size = 30, required this.text, this.color = Colors.black})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {

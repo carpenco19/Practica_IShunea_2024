@@ -8,12 +8,12 @@ class DataModel {
   final String description;
   final String location;
   DataModel(
-      {required this.name,
-      required this.img,
+      {required this.img,
       required this.price,
       required this.people,
       required this.description,
       required this.location,
+      required this.name,
       required this.stars});
 
   factory DataModel.fromJson(Map<String, dynamic> json) {
