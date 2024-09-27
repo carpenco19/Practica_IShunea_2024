@@ -8,31 +8,30 @@ class InitialState extends CubitStates {
   // when cubit is created this is the state that will be provided.
   @override
   // TODO: implement props
-  List<Object> get props => [];
+  List<Object> props() => [];
 }
 
 class WelcomeState extends CubitStates {
   // responsible for showing the UI Data
   @override
   // TODO: implement props
-  List<Object> get props => [];
+  List<Object> props() => [];
 }
 
 class LoadingState extends CubitStates {
   // responsible for showing the UI Data
   @override
   // TODO: implement props
-  List<Object> get props => [];
+  List<Object> props() => [];
 }
 
 class LoadedState extends CubitStates {
-
   LoadedState(this.places);
-  final List<DataModel>places;
+  final List<DataModel> places;
 
   @override
   // TODO: implement props
-  List<Object> get props => [places];
+  List<Object> props() => [places];
 }
 
 class DetailState extends CubitStates {
@@ -42,5 +41,5 @@ class DetailState extends CubitStates {
 // responsible for showing the UI Data
   @override
   // TODO: implement props
-  List<Object> get props => [place];
+  List<Object> props() => [place];
 }
